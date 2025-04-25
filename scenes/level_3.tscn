@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxp6pwgbt151v"]
+
+[ext_resource type="Script" uid="uid://coy6510ji8q0i" path="res://scrips/level_3.gd" id="1_70nk6"]
+
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_70nk6")
+
+[node name="NextLevelButton3" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 64
+text = "Next Level"
+
+[connection signal="pressed" from="NextLevelButton3" to="." method="_on_next_level_button_3_pressed"]
