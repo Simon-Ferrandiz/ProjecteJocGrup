@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvi4wswllkjwc"]
+
+[ext_resource type="Script" uid="uid://b0grfg7vyp65n" path="res://scrips/exit.gd" id="1_uyw7u"]
+[ext_resource type="Texture2D" uid="uid://sed13ih860e3" path="res://assets/WhatsApp Image 2025-05-02 at 18.49.09.jpeg" id="2_l5n14"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7mer"]
+size = Vector2(104, 120)
+
+[node name="Exit" type="Area2D"]
+script = ExtResource("1_uyw7u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0.500006)
+scale = Vector2(0.684564, 0.611111)
+texture = ExtResource("2_l5n14")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_c7mer")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

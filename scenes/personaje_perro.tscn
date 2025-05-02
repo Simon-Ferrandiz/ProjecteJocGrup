@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://x8e0ttlddayc"]
+
+[ext_resource type="Script" uid="uid://bfnv6to5wynn6" path="res://scrips/personaje_perro.gd" id="1_4pa6s"]
+[ext_resource type="Texture2D" uid="uid://cqhh186xy344p" path="res://assets/spritesheet.png" id="1_fii45"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pa6s"]
+atlas = ExtResource("1_fii45")
+region = Rect2(0, 0, 90, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sd7v"]
+atlas = ExtResource("1_fii45")
+region = Rect2(90, 0, 90, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t86nj"]
+atlas = ExtResource("1_fii45")
+region = Rect2(180, 0, 90, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exhdx"]
+atlas = ExtResource("1_fii45")
+region = Rect2(270, 0, 90, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ah4uq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pa6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sd7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t86nj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exhdx")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1sd7v"]
+radius = 7.61577
+
+[node name="PersonajePerro" type="CharacterBody2D"]
+script = ExtResource("1_4pa6s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -11.5)
+scale = Vector2(0.422222, 0.396552)
+sprite_frames = SubResource("SpriteFrames_ah4uq")
+animation = &"Idle"
+autoplay = "Idle"
+frame = 3
+frame_progress = 0.333778
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -7)
+shape = SubResource("CircleShape2D_1sd7v")
