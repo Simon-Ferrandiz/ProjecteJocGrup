@@ -6,32 +6,33 @@
 script = ExtResource("1_3shnc")
 
 [node name="Level1Button" type="Button" parent="."]
-offset_left = 317.0
-offset_top = 104.0
-offset_right = 612.0
+offset_left = 415.0
+offset_top = 103.0
+offset_right = 765.0
 offset_bottom = 203.0
 disabled = true
 text = "Level 1"
 
 [node name="Level2Button" type="Button" parent="."]
-offset_left = 308.0
-offset_top = 263.0
-offset_right = 631.0
-offset_bottom = 363.0
+custom_minimum_size = Vector2(5, 2)
+offset_left = 415.0
+offset_top = 273.0
+offset_right = 765.0
+offset_bottom = 373.0
 disabled = true
 text = "Level 2"
 
 [node name="Level3Button" type="Button" parent="."]
-offset_left = 295.0
-offset_top = 398.0
-offset_right = 632.0
-offset_bottom = 499.0
+offset_left = 415.0
+offset_top = 443.0
+offset_right = 765.0
+offset_bottom = 543.0
 disabled = true
 text = "Level 3"
 
 [node name="BackButton" type="Button" parent="."]
-offset_right = 161.0
-offset_bottom = 66.0
+offset_right = 124.0
+offset_bottom = 44.0
 text = "Back"
 
 [connection signal="pressed" from="Level1Button" to="." method="_on_level_1_button_pressed"]

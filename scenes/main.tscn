@@ -6,16 +6,18 @@
 script = ExtResource("1_o5qli")
 
 [node name="StartButton" type="Button" parent="."]
-offset_left = 493.0
-offset_top = 498.0
-offset_right = 651.0
-offset_bottom = 594.0
+offset_left = 436.0
+offset_top = 255.0
+offset_right = 697.0
+offset_bottom = 351.0
 theme_override_font_sizes/font_size = 64
 text = "Start"
 
 [node name="ExitButton" type="Button" parent="."]
-offset_right = 79.0
-offset_bottom = 63.0
+offset_left = 524.0
+offset_top = 389.0
+offset_right = 603.0
+offset_bottom = 452.0
 theme_override_font_sizes/font_size = 40
 text = "Exit"
 
