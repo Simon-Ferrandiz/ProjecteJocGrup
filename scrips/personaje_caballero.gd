@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+signal action
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -200.0
@@ -21,5 +22,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if velocity.x < 0:
+		$AnimatedSprite2D.flip_h = true
+	elif velocity.x > 0:
+		$AnimatedSprite2D.flip_h = false
+	if Input.is_action_just_pressed("Caballeroabrir"):
+		action.emit()
 
 	move_and_slide()
