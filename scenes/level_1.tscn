@@ -196,7 +196,7 @@ sources/0 = SubResource("TileSetAtlasSource_4nkto")
 script = ExtResource("1_014kd")
 
 [node name="Placa" parent="." instance=ExtResource("2_15mv3")]
-position = Vector2(149, 633)
+position = Vector2(756, 537)
 
 [node name="PersonajeCaballero" parent="." instance=ExtResource("2_rus8k")]
 z_index = 5
@@ -222,10 +222,10 @@ position = Vector2(52, 62)
 position = Vector2(384, 569)
 
 [node name="Puerta2" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(382, 437)
+position = Vector2(382, 441)
 
 [node name="Puerta3" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(169, 538)
+position = Vector2(836, 488)
 
 [node name="Pulsador1" parent="." instance=ExtResource("7_15mv3")]
 position = Vector2(331, 568)
