@@ -34,14 +34,14 @@ func _on_button_pressed() -> void:
 
 func _on_placa_body_entered(body: Node2D) -> void:
 	if body.name == "PersonajeCaballero" or body.name == "PersonajePerro":
-		$Puerta3/CollisionShape2D.disabled = true
+		$Puerta3/CollisionShape2D.set_deferred("disabled", true)
 		$Puerta3.hide()
 	print($Puerta3/CollisionShape2D)
 	print($Puerta3/CollisionShape2D.disabled)
 
 func _on_placa_body_exited(body: Node2D) -> void:
 	if body.name == "PersonajeCaballero" or body.name == "PersonajePerro":
-		$Puerta3/CollisionShape2D.disabled = false
+		$Puerta3/CollisionShape2D.set_deferred("disabled", false)
 		$Puerta3.show()
 	print($Puerta3/CollisionShape2D)
 	print($Puerta3/CollisionShape2D.disabled)
