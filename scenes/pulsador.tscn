@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://buiusx2c2hwkp"]
 
 [ext_resource type="Script" uid="uid://ipsvgctjnp1j" path="res://scrips/pulsador.gd" id="1_o7r70"]
-[ext_resource type="Texture2D" uid="uid://b5vft6ea4837l" path="res://assets/Pulsador.png" id="1_ofw3o"]
+[ext_resource type="Texture2D" uid="uid://daxe6xfystxwg" path="res://assets/open_button.png" id="2_o7r70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7r70"]
 size = Vector2(20, 12.5)
@@ -10,9 +10,9 @@ size = Vector2(20, 12.5)
 script = ExtResource("1_o7r70")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -7)
-scale = Vector2(1.38715, 0.8125)
-texture = ExtResource("1_ofw3o")
+position = Vector2(-2.68221e-07, -6)
+scale = Vector2(0.0204082, 0.0122449)
+texture = ExtResource("2_o7r70")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)

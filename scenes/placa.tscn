@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://rq4m2iohshei"]
 
-[ext_resource type="Texture2D" uid="uid://bltjehyfkarde" path="res://assets/world_tileset.png" id="1_wmf7u"]
+[ext_resource type="Texture2D" uid="uid://b7vdu1xvrknq6" path="res://assets/Boto_saltar.png" id="1_wmf7u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxjon"]
 size = Vector2(16, 20)
@@ -11,11 +11,9 @@ size = Vector2(16, 5)
 [node name="Placa" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -9)
+position = Vector2(-0.25, -4.53125)
+scale = Vector2(0.0143914, 0.00899465)
 texture = ExtResource("1_wmf7u")
-hframes = 16
-vframes = 16
-frame = 149
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -11)
