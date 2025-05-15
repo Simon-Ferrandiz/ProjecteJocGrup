@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxk0ckepkj731"]
+[gd_scene load_steps=11 format=3 uid="uid://dxk0ckepkj731"]
 
 [ext_resource type="Script" uid="uid://d2uycqvmpe0u6" path="res://scrips/level_2.gd" id="1_3bmlt"]
 [ext_resource type="Texture2D" uid="uid://bltjehyfkarde" path="res://assets/world_tileset.png" id="2_b4j7a"]
+[ext_resource type="Script" uid="uid://bdsrmdu72qvng" path="res://scrips/camera_2d.gd" id="2_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://csgas0e65566j" path="res://scenes/personaje_caballero.tscn" id="3_wo48x"]
 [ext_resource type="PackedScene" uid="uid://x8e0ttlddayc" path="res://scenes/personaje_perro.tscn" id="4_y0kc7"]
 [ext_resource type="PackedScene" uid="uid://bvi4wswllkjwc" path="res://scenes/exit.tscn" id="5_ne2mo"]
@@ -165,6 +166,13 @@ sources/1 = SubResource("TileSetAtlasSource_6cvei")
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_3bmlt")
 
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target_1", "target_2")]
+position = Vector2(26, 1267)
+zoom = Vector2(2, 2)
+script = ExtResource("2_ne2mo")
+target_1 = NodePath("../PersonajeCaballero")
+target_2 = NodePath("../PersonajePerro")
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_que50")
 collision_visibility_mode = 2
@@ -173,10 +181,6 @@ layer_0/tile_data = PackedInt32Array(5242880, 131073, 1, 5242881, 131073, 0, 524
 
 [node name="PersonajeCaballero" parent="." instance=ExtResource("3_wo48x")]
 position = Vector2(26, 1276)
-
-[node name="Camera2D" type="Camera2D" parent="PersonajeCaballero"]
-position = Vector2(0, -9)
-zoom = Vector2(2, 2)
 
 [node name="PersonajePerro" parent="." instance=ExtResource("4_y0kc7")]
 position = Vector2(47, 1278)

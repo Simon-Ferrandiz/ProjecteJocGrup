@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxp6pwgbt151v"]
+[gd_scene load_steps=10 format=3 uid="uid://bxp6pwgbt151v"]
 
 [ext_resource type="Script" uid="uid://coy6510ji8q0i" path="res://scrips/level_3.gd" id="1_70nk6"]
 [ext_resource type="Texture2D" uid="uid://bltjehyfkarde" path="res://assets/world_tileset.png" id="2_1pn4d"]
 [ext_resource type="PackedScene" uid="uid://csgas0e65566j" path="res://scenes/personaje_caballero.tscn" id="3_ah8om"]
 [ext_resource type="PackedScene" uid="uid://x8e0ttlddayc" path="res://scenes/personaje_perro.tscn" id="4_p6vls"]
 [ext_resource type="PackedScene" uid="uid://bvi4wswllkjwc" path="res://scenes/exit.tscn" id="5_ah8om"]
+[ext_resource type="Script" uid="uid://bdsrmdu72qvng" path="res://scrips/camera_2d.gd" id="6_p6vls"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hhfj6"]
 
@@ -211,13 +212,17 @@ layer_0/tile_data = PackedInt32Array(0, 393216, 3, 65536, 393216, 4, 131072, 393
 [node name="PersonajeCaballero" parent="." instance=ExtResource("3_ah8om")]
 position = Vector2(25, 49)
 
-[node name="Camera2D" type="Camera2D" parent="PersonajeCaballero"]
-zoom = Vector2(2, 2)
-
 [node name="PersonajePerro" parent="." instance=ExtResource("4_p6vls")]
 position = Vector2(50, 49)
 
 [node name="Exit" parent="." instance=ExtResource("5_ah8om")]
 position = Vector2(1075, 391)
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target_1", "target_2")]
+position = Vector2(25, 49)
+zoom = Vector2(2, 2)
+script = ExtResource("6_p6vls")
+target_1 = NodePath("../PersonajeCaballero")
+target_2 = NodePath("../PersonajePerro")
 
 [connection signal="pressed" from="NextLevelButton3" to="." method="_on_next_level_button_3_pressed"]
