@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxk0ckepkj731"]
+[gd_scene load_steps=12 format=3 uid="uid://dxk0ckepkj731"]
 
 [ext_resource type="Script" uid="uid://d2uycqvmpe0u6" path="res://scrips/level_2.gd" id="1_3bmlt"]
 [ext_resource type="Texture2D" uid="uid://bltjehyfkarde" path="res://assets/world_tileset.png" id="2_b4j7a"]
-[ext_resource type="Script" uid="uid://bdsrmdu72qvng" path="res://scrips/camera_2d.gd" id="2_ne2mo"]
+[ext_resource type="Script" path="res://scrips/camera_2d.gd" id="2_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://csgas0e65566j" path="res://scenes/personaje_caballero.tscn" id="3_wo48x"]
 [ext_resource type="PackedScene" uid="uid://x8e0ttlddayc" path="res://scenes/personaje_perro.tscn" id="4_y0kc7"]
 [ext_resource type="PackedScene" uid="uid://bvi4wswllkjwc" path="res://scenes/exit.tscn" id="5_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://cwnaplkd8v4go" path="res://scenes/puerta.tscn" id="6_y0kc7"]
 [ext_resource type="PackedScene" uid="uid://rq4m2iohshei" path="res://scenes/placa.tscn" id="7_y0kc7"]
+[ext_resource type="Texture2D" uid="uid://dek63jwjmspsp" path="res://Backgrounds/backgroundColorDesert.png" id="9_6cvei"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6cvei"]
 texture = ExtResource("2_b4j7a")
@@ -199,6 +200,26 @@ position = Vector2(241, 945)
 
 [node name="Placa2" parent="." instance=ExtResource("7_y0kc7")]
 position = Vector2(728, 880)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-70, 120)
+scale = Vector2(0.542969, 0.455078)
+texture = ExtResource("9_6cvei")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(486, 121)
+scale = Vector2(0.542969, 0.455078)
+texture = ExtResource("9_6cvei")
+centered = false
 
 [connection signal="body_entered" from="Placa" to="." method="_on_placa_body_entered"]
 [connection signal="body_entered" from="Placa2" to="." method="_on_placa_body_entered"]
