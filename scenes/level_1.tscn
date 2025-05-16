@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0u0djwlf6fhf"]
+[gd_scene load_steps=13 format=3 uid="uid://b0u0djwlf6fhf"]
 
 [ext_resource type="Script" uid="uid://cp5yl1i7elc3b" path="res://scrips/level_1.gd" id="1_014kd"]
 [ext_resource type="PackedScene" uid="uid://rq4m2iohshei" path="res://scenes/placa.tscn" id="2_15mv3"]
@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bvi4wswllkjwc" path="res://scenes/exit.tscn" id="5_4nkto"]
 [ext_resource type="PackedScene" uid="uid://cwnaplkd8v4go" path="res://scenes/puerta.tscn" id="6_pa8r4"]
 [ext_resource type="PackedScene" uid="uid://buiusx2c2hwkp" path="res://scenes/pulsador.tscn" id="7_15mv3"]
-[ext_resource type="Script" uid="uid://bdsrmdu72qvng" path="res://scrips/camera_2d.gd" id="9_e3sih"]
+[ext_resource type="Script" path="res://scrips/camera_2d.gd" id="9_e3sih"]
+[ext_resource type="Texture2D" uid="uid://di77us71neid8" path="res://Backgrounds/backgroundColorGrass.png" id="10_2os1m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nkto"]
 texture = ExtResource("3_5xbjy")
@@ -260,6 +261,26 @@ offset_top = 500.0
 offset_right = 882.0
 offset_bottom = 523.0
 text = "<- Gos"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-58, 1)
+scale = Vector2(0.542969, 0.455078)
+texture = ExtResource("10_2os1m")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(498, -1)
+scale = Vector2(0.542969, 0.455078)
+texture = ExtResource("10_2os1m")
+centered = false
 
 [connection signal="body_entered" from="Placa" to="." method="_on_placa_body_entered"]
 [connection signal="body_exited" from="Placa" to="." method="_on_placa_body_exited"]
