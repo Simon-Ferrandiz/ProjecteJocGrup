@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxp6pwgbt151v"]
+[gd_scene load_steps=11 format=3 uid="uid://bxp6pwgbt151v"]
 
 [ext_resource type="Script" uid="uid://coy6510ji8q0i" path="res://scrips/level_3.gd" id="1_70nk6"]
 [ext_resource type="Texture2D" uid="uid://bltjehyfkarde" path="res://assets/world_tileset.png" id="2_1pn4d"]
 [ext_resource type="PackedScene" uid="uid://csgas0e65566j" path="res://scenes/personaje_caballero.tscn" id="3_ah8om"]
 [ext_resource type="PackedScene" uid="uid://x8e0ttlddayc" path="res://scenes/personaje_perro.tscn" id="4_p6vls"]
 [ext_resource type="PackedScene" uid="uid://bvi4wswllkjwc" path="res://scenes/exit.tscn" id="5_ah8om"]
-[ext_resource type="Script" uid="uid://bdsrmdu72qvng" path="res://scrips/camera_2d.gd" id="6_p6vls"]
+[ext_resource type="Script" path="res://scrips/camera_2d.gd" id="6_p6vls"]
+[ext_resource type="Texture2D" uid="uid://p5v5u18rn6dh" path="res://Backgrounds/6axfm8uck3oy.png" id="7_hhfj6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hhfj6"]
 
@@ -224,5 +225,16 @@ zoom = Vector2(2, 2)
 script = ExtResource("6_p6vls")
 target_1 = NodePath("../PersonajeCaballero")
 target_2 = NodePath("../PersonajePerro")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-62, -38)
+scale = Vector2(0.634375, 0.610795)
+texture = ExtResource("7_hhfj6")
+centered = false
 
 [connection signal="pressed" from="NextLevelButton3" to="." method="_on_next_level_button_3_pressed"]
